@@ -69,7 +69,6 @@ export default function Signup() {
 
   const [formState, formAction] = useActionState(signupAction, {
     errors: null,
-    enteredValues: {},
   });
 
   return (
@@ -156,6 +155,9 @@ export default function Signup() {
             id="google"
             name="acquisition"
             value="google"
+            defaultChecked={formState.enteredValues?.acquisitionChannel.includes(
+              "google"
+            )}
           />
           <label htmlFor="google">Google</label>
         </div>
@@ -167,7 +169,7 @@ export default function Signup() {
             name="acquisition"
             value="friend"
             defaultChecked={formState.enteredValues?.acquisitionChannel.includes(
-              "google"
+              "friend"
             )}
           />
           <label htmlFor="friend">Referred by friend</label>
